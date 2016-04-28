@@ -3,4 +3,5 @@
 target/
 *.iml
 *.eml
+*.classpath
 *.project
