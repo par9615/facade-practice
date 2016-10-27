@@ -7,7 +7,7 @@ import com.iteso.facade.interfaces.*;
  */
 public class MovieFacade {
     TV tv;
-    GameConsole console;
+    DVDPlayer dvdPlayer;
     GameController controller;
     SoundSystem soundSystem;
     Router router;
@@ -15,7 +15,7 @@ public class MovieFacade {
     VideoGame game;
 
     MovieFacade( TV tv,
-            GameConsole console,
+                 DVDPlayer dvdPlayer,
             GameController controller,
             SoundSystem soundSystem,
             Router router,
@@ -23,7 +23,7 @@ public class MovieFacade {
             VideoGame game){
 
         this.tv = tv;
-        this.console = console;
+        this.dvdPlayer = dvdPlayer;
         this.controller = controller;
         this.soundSystem = soundSystem;
         this.router = router;
