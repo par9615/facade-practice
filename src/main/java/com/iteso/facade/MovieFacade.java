@@ -9,7 +9,6 @@ import com.iteso.facade.interfaces.impl.PS3Game;
 public class MovieFacade {
     TV tv;
     DVDPlayer dvdPlayer;
-    GameController controller;
     SoundSystem soundSystem;
     Router router;
     Lights lights;
@@ -17,7 +16,6 @@ public class MovieFacade {
 
     MovieFacade( TV tv,
                  DVDPlayer dvdPlayer,
-            GameController controller,
             SoundSystem soundSystem,
             Router router,
             Lights lights,
@@ -25,7 +23,6 @@ public class MovieFacade {
 
         this.tv = tv;
         this.dvdPlayer = dvdPlayer;
-        this.controller = controller;
         this.soundSystem = soundSystem;
         this.router = router;
         this.lights = lights;
@@ -43,7 +40,6 @@ public class MovieFacade {
         tv.toHDMI();
 
         dvdPlayer.on();
-        controller.on();
         movie = new DVD(movieName);
         dvdPlayer.insertMovie(movie);
 
@@ -57,6 +53,18 @@ public class MovieFacade {
 
         movie.play();
         System.out.println();
+    }
+
+    public void stopPlayingMovie(){
+        System.out.println();
+        System.out.println("Turning the system OFF, this may take some time");
+        System.out.println();
+        lights.on();
+        tv.off();
+        dvdPlayer.off();
+        soundSystem.off();
+        router.off();
+
     }
 
 
