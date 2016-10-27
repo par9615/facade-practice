@@ -6,5 +6,5 @@ package com.iteso.facade.interfaces;
 public interface DVDPlayer {
     void on();
     void off();
-    void insertMovie(String movie);
+    void insertMovie(Movie movie);
 }
