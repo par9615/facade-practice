@@ -1,6 +1,7 @@
 package com.iteso.facade;
 
 import com.iteso.facade.interfaces.*;
+import com.iteso.facade.interfaces.impl.DVD;
 import com.iteso.facade.interfaces.impl.PS3Game;
 
 /**
@@ -55,6 +56,22 @@ public class MovieFacade {
         System.out.println();
     }
 
+    public void pausePlayingMovie() {
+        System.out.println();
+        System.out.println("Pausing the movie");
+        System.out.println();
+        lights.on();
+        movie.pause();
+    }
+
+    public void continuePlayingMovie() {
+        System.out.println();
+        System.out.println("Playing movie from last point");
+        System.out.println();
+        lights.off();
+        movie.play();
+    }
+
     public void stopPlayingMovie(){
         System.out.println();
         System.out.println("Turning the system OFF, this may take some time");
@@ -64,7 +81,7 @@ public class MovieFacade {
         dvdPlayer.off();
         soundSystem.off();
         router.off();
-
+        movie.stop();
     }
 
 
