@@ -10,21 +10,17 @@ import com.iteso.facade.interfaces.SoundSystem;
  * To change this template use File | Settings | File Templates.
  */
 public class Bose implements SoundSystem {
-    @Override
-    public void on() {
-        System.out.println("Bose Surround System is turning ON");
-        System.out.println("Bose Surround System is ON");
+
+    public String on() {
+        return("Bose Surround System is turning ON\n"+"Bose Surround System is ON\n");
     }
 
-    @Override
-    public void off() {
-        System.out.println("Bose Surround System is turning OFF");
-        System.out.println("Bose Surround System is OFF");
+    public String off() {
+        return("Bose Surround System is turning OFF\n"+"Bose Surround System is OFF\n");
 
     }
 
-    @Override
-    public void toOpticalEntry() {
-        System.out.println("Changing Bose input to Optical");
+    public String toOpticalEntry() {
+        return("Changing Bose input to Optical\n");
     }
 }

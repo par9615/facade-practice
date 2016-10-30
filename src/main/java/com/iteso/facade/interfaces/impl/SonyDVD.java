@@ -7,15 +7,16 @@ import com.iteso.facade.interfaces.Movie;
  * Created by Erick on 27/10/2016.
  */
 public class SonyDVD implements DVDPlayer{
-    public void on() {
-        System.out.println("Sony DVD Player is on!");
+
+    public String on() {
+        return("Sony DVD Player is on!");
     }
 
-    public void off() {
-        System.out.println("Sony DVD Player says goodbye!");
+    public String off() {
+        return("Sony DVD Player says goodbye!");
     }
 
-    public void insertMovie(Movie movie) {
-        System.out.println("Sony DVD Player has " + movie + " movie");
+    public String insertMovie(Movie movie) {
+        return("Sony DVD Player has " + movie + " movie");
     }
 }

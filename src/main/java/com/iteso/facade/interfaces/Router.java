@@ -8,7 +8,7 @@ package com.iteso.facade.interfaces;
  * To change this template use File | Settings | File Templates.
  */
 public interface Router {
-    void on();
-    void off();
-    void checkInternet();
+    String on();
+    String off();
+    String checkInternet();
 }

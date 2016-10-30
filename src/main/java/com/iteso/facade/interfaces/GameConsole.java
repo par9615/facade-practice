@@ -8,7 +8,7 @@ package com.iteso.facade.interfaces;
  * To change this template use File | Settings | File Templates.
  */
 public interface GameConsole {
-    void on();
-    void off();
-    void insertGame(VideoGame videoGame);
+    String on();
+    String off();
+    String insertGame(VideoGame videoGame);
 }

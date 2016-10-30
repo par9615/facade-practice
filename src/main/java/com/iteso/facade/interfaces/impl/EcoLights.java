@@ -10,13 +10,13 @@ import com.iteso.facade.interfaces.Lights;
  * To change this template use File | Settings | File Templates.
  */
 public class EcoLights implements Lights {
-    @Override
-    public void on() {
-        System.out.println("EcoLights are ON");
+
+    public String on() {
+        return("EcoLights are ON");
     }
 
-    @Override
-    public void off() {
-        System.out.println("EcoLights are OFF");
+
+    public String off() {
+        return("EcoLights are OFF");
     }
 }

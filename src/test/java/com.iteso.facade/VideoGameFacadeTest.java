@@ -1,35 +1,41 @@
 package com.iteso.facade;
 
 import com.iteso.facade.interfaces.*;
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.mockito.Mockito.*;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 /**
  * Created by Erick on 29/10/2016.
  */
-public class MovieFacadeTest {
-    private static String GENERIC_MOVIE = "Generic Movie";
-    private MovieFacade movieFacade;
+public class VideoGameFacadeTest {
+    private static String GENERIC_VIDEOGAME = "Generic Videogame";
+    private VideoGameFacade videoGameFacade;
     private TV tv;
-    private DVDPlayer dvdPlayer;
+    private GameConsole console;
+    private GameController controller;
     private SoundSystem soundSystem;
     private Router router;
     private Lights lights;
-    private Movie movie;
+    private VideoGame game;
 
     @Before
     public void setUp() {
         tv = mock(TV.class);
-        dvdPlayer = mock(DVDPlayer.class);
+        console = mock(GameConsole.class);
+        controller = mock(GameController.class);
         soundSystem = mock(SoundSystem.class);
         router = mock(Router.class);
         lights = mock(Lights.class);
-        movie = mock(Movie.class);
+        game = mock(VideoGame.class);
 
-        movieFacade = new MovieFacade(tv,dvdPlayer,soundSystem,router,lights,movie);
-        movieFacade.playMovie(GENERIC_MOVIE);
-        movieFacade.stopPlayingMovie();
+        videoGameFacade = new VideoGameFacade(tv, console, controller, soundSystem, router, lights);
+        videoGameFacade.playOnlineGame(GENERIC_VIDEOGAME);
+        videoGameFacade.stopPlayingGame();
     }
 
     @Test
@@ -38,13 +44,18 @@ public class MovieFacadeTest {
     }
 
     @Test
-    public void testDVDPlayerOn() {
-        verify(dvdPlayer, times(1)).on();
+    public void testControllerOn() {
+        verify(controller, times(1)).on();
     }
 
     @Test
     public void testTVOn() {
         verify(tv,times(1)).on();
+    }
+
+    @Test
+    public void testConsoleOn() {
+        verify(console, times(1)).on();
     }
 
     @Test
@@ -73,37 +84,13 @@ public class MovieFacadeTest {
     }
 
     @Test
-    public void testMoviePlay() {
-        verify(movie, times(0)).play();
+    public void testSetOnlineMode() {
+        verify(game, times(0)).setOnlineMode();
     }
 
     @Test
-    public void testMoviePaused() {
-        movieFacade.pausePlayingMovie();
-        verify(movie,times(0)).pause();
-    }
-
-    @Test
-    public void testLightsOnWhenPausingMovie() {
-        movieFacade.pausePlayingMovie();
-        verify(lights, times(2)).on();
-    }
-
-    @Test
-    public void testLightsOffWhenPlayingAgain() {
-        movieFacade.continuePlayingMovie();
-        verify(lights, times(2)).off();
-    }
-
-    @Test
-    public void testMovieContinuePlaying() {
-        movieFacade.continuePlayingMovie();
-        verify(movie, times(0)).play();
-    }
-
-    @Test
-    public void testTVOff() {
-        verify(tv, times(1)).off();
+    public void testPlayGame() {
+        verify(game,times(0)).play();
     }
 
     @Test
@@ -112,8 +99,18 @@ public class MovieFacadeTest {
     }
 
     @Test
-    public void testDVDPlayerOff() {
-        verify(dvdPlayer, times(1)).off();
+    public void testTVOff() {
+        verify(tv, times(1)).off();
+    }
+
+    @Test
+    public void testControllerOff() {
+        verify(controller, times(1)).off();
+    }
+
+    @Test
+    public void testConsoleOff() {
+        verify(console, times(1)).off();
     }
 
     @Test
@@ -124,10 +121,5 @@ public class MovieFacadeTest {
     @Test
     public void testRouterOff() {
         verify(router,times(1)).off();
-    }
-
-    @Test
-    public void movieStop() {
-        verify(movie, times(0)).stop();
     }
 }

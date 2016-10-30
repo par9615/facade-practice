@@ -12,15 +12,15 @@ public class DVD implements Movie{
         this.name = name;
     }
 
-    public void play() {
-        System.out.println("DVD is playing!");
+    public String play() {
+        return("DVD is playing!");
     }
 
-    public void pause() {
-        System.out.println("DVD is paused!");
+    public String pause() {
+        return("DVD is paused!");
     }
 
-    public void stop() {
-        System.out.println("DVD stop playing!");
+    public String stop() {
+        return("DVD stop playing!");
     }
 }

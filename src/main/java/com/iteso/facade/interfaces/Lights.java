@@ -8,7 +8,7 @@ package com.iteso.facade.interfaces;
  * To change this template use File | Settings | File Templates.
  */
 public interface Lights {
-    void on();
-    void off();
+    String on();
+    String off();
 
 }

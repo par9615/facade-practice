@@ -8,7 +8,7 @@ package com.iteso.facade.interfaces;
  * To change this template use File | Settings | File Templates.
  */
 public interface SoundSystem {
-    void on();
-    void off();
-    void toOpticalEntry();
+    String on();
+    String off();
+    String toOpticalEntry();
 }
